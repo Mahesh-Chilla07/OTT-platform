@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OTT PLATFORM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="wave.css">
+    <style>
+      /* Styling for cinema posters and interactive options */
+      .cinema {
+        position: relative;
+        display: inline-block;
+        width: 150px;
+        margin: 10px;
+      }
+
+      .cinema img {
+        width:200px ;
+        height: 250px;
+        border-radius: 10px;
+      }
+
+      .dots-menu {
+        position: absolute;
+        top: 10px;
+        left: 180px;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 18px;
+        padding: 5px;
+        cursor: pointer;
+        display: none;
+      }
+
+      .options {
+        display: none;
+        position: absolute;
+        top: 40px;
+        right: 10px;
+        background: rgba(0, 0, 0, 0.8);
+        color :white;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+
+      .options div {
+        padding: 5px 0;
+        cursor: pointer;
+      }
+
+      .cinema:hover .dots-menu {
+        display: block;
+      }
+
+      .cinema:hover .options {
+        display: block;
+      }
+
+      /* Downloads and Playlist sections */
+      .downloads-section, .playlist-section {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    
+  <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <img src="str.logo.png" class="logo" alt="Stream Wave">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+           <div style="display: flex; justify-content: center;">
+                <img src="stream.logo.png" alt="Stream Wave" class="title">
+            </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- Align Navbar Links to the End -->
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="movies.html">Movies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="list.html">WatchList</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="download.html">Downloads</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="account.html">Account</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </nav>
+ <div class="bg-img">
+       <div class="header-sec">
+          <h1 class="heading">Welcome to Stream Wave  <br> Mr.Mahesh</h1>
+          <p class="para">Thank you for joining the wave! Dive into a world of stories made just for you.</p>
+            <p class="para2">Stay tuned for endless thrills!</p>
+            <div class="email-form">
+                   <a class=" skip-btn" href="movies.html" role="button">Start watching</a>
+            </div>
+        </div> 
+ </div>
+ <div class="black-img">
+    <h1 class="trend">Trending Now</h1>
+      <div class="bg-img2">
+    <!-- script testing -->
+      <div class="cinema" id="movie1">
+      <img src="ott images/kalki.img" alt="KALKI MOVIE" class="cinema img">
+         <h2 class="cin-head">KALKI</h2>
+      <button class="dots-menu">⋮</button>
+      <div class="options">
+        <div onclick="addToDownloads('KALKI', 'ott images/kalki.img')">Download</div>
+        <div onclick="addToPlaylist('KALKI', 'ott images/kalki.img')">Add to Playlist</div>
+        <div>Play</div>
+      </div>
+    </div>
+    <div class="cinema" id="movie2">
+      <img src="ott images/dev.img" alt="DEVARA MOVIE" class="cinema img">
+         <h2 class="cin-head">DEVARA</h2>
+      <button class="dots-menu">⋮</button>
+      <div class="options">
+        <div onclick="addToDownloads('DEVARA', 'ott images/dev.img')">Download</div>
+        <div onclick="addToPlaylist('DEVARA', 'ott images/dev.img')">Add to Playlist</div>
+        <div>Play</div>
+      </div>
+    </div>
+    <div class="cinema" id="movie3">
+      <img src="ott images/salaar.img" alt="SALAAR MOVIE" class="cinema img">
+         <h2 class="cin-head">SALAAR</h2>
+      <button class="dots-menu">⋮</button>
+      <div class="options">
+        <div onclick="addToDownloads('SALAAR', 'ott images/salaar.img')">Download</div>
+        <div onclick="addToPlaylist('SALAAR', 'ott images/salaar.img')">Add to Playlist</div>
+        <div>Play</div>
+      </div>
+    </div>
+    <div class="cinema" id="movie4">
+      <img src="ott images/sari.img" alt="SARIPODHA SANIVARAM MOVIE" class="cinema img">
+         <h2 class="cin-head">SARIPODHA SANIVARAM</h2>
+      <button class="dots-menu">⋮</button>
+      <div class="options">
+        <div onclick="addToDownloads('SARIPODHA SANIVARAM', 'ott images/sari.img')">Download</div>
+        <div onclick="addToPlaylist('SARIPODHA SANIVARAM', 'ott images/sari.img')">Add to Playlist</div>
+        <div>Play</div>
+      </div>
+    </div>
+    <div class="cinema" id="movie5">
+      <img src="ott images/eagle.img" alt="EAGLE MOVIE" class="cinema img">
+         <h2 class="cin-head">EAGLE</h2>
+      <button class="dots-menu">⋮</button>
+      <div class="options">
+        <div onclick="addToDownloads('EAGLE', 'ott images/eagle.img')">Download</div>
+        <div onclick="addToPlaylist('EAGLE', 'ott images/eagle.img')">Add to Playlist</div>
+        <div>Play</div>
+      </div>
+    </div>
+  </div>
+ </div>    
+    <script>
+      // Function to add movie to Downloads and save to local storage
+      function addToDownloads(movieName, imagePath) {
+        let downloads = JSON.parse(localStorage.getItem('downloads')) || [];
+        
+        // Check if movie is already in Downloads
+        if (!downloads.some(movie => movie.name === movieName)) {
+          downloads.push({ name: movieName, image: imagePath });
+          localStorage.setItem('downloads', JSON.stringify(downloads));
+          alert(`${movieName} added to Downloads`);
+        } else {
+          alert(`${movieName} is already in Downloads.`);
+        }
+      }
+
+      // Function to add movie to Playlist and save to local storage
+      function addToPlaylist(movieName, imagePath) {
+        let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
+        
+        // Check if movie is already in Playlist
+        if (!playlist.some(movie => movie.name === movieName)) {
+          playlist.push({ name: movieName, image: imagePath });
+          localStorage.setItem('playlist', JSON.stringify(playlist));
+          alert(`${movieName} added to Playlist`);
+        } else {
+          alert(`${movieName} is already in Playlist.`);
+        }
+      }
+    </script>  
+    <div class="black-img">
+      <h1 class="trend">Upcoming Movies</h1>
+        <div class="bg-img2">
+    <div class="cinema">
+      <img src="ott images/baak.img" class="cinema" alt="BAAK MOVIE">
+        <h2 class="cin-head">BAAK</h2>
+    </div>
+   <div class="cinema">
+    <img src="ott images/amaran.img" class="cinema" alt="AMARAN MOVIE">
+      <h2 class="cin-head">AMARAN</h2>
+ </div>
+ <div class="cinema">
+  <img src="ott images/kaa.img" class="cinema" alt="KAA MOVIE">
+    <h2 class="cin-head">KAA</h2>
+</div>
+<div class="cinema">
+  <img src="ott images/bhageera.img" class="cinema" alt="BAGHEERA MOVIE">
+    <h2 class="cin-head">BAGHEERA</h2>
+</div>
+<div class="cinema">
+  <img src="ott images/viswam.img" class="cinema" alt="VISWAM MOVIE">
+    <h2 class="cin-head">VISWAM</h2>
+</div>
+</div>
+</div>
+<div class="black-img">
+  <h1 class="trend">Tv Shows</h1>
+    <div class="bg-img2">
+<div class="cinema">
+  <img src="ott images/d2.img" class="cinema" alt="DHEE SHOW">
+    <h2 class="cin-head"><Data>Dhee-ultimate</Data></h2>
+    <a class="watch-now" href="movies.html" role="button">Watch Now</a>
+</div>
+<div class="cinema">
+<img src="ott images/pove.img" class="cinema" alt="POVE PORA">
+  <h2 class="cin-head">POVE PORA</h2>
+  <a class="watch-now" href="movies.html" role="button">Watch Now</a>
+</div>
+<div class="cinema">
+<img src="ott images/star.img" class="cinema" alt="STAR MAHILA">
+<h2 class="cin-head">STAR MAHILA</h2>
+<a class="watch-now" href="movies.html" role="button">Watch Now</a>
+</div>
+<div class="cinema">
+<img src="ott images/bb.img" class="cinema" alt="BIGG BOSS">
+<h2 class="cin-head">BIGG BOSS</h2>
+<a class="watch-now" href="movies.html" role="button">Watch Now</a>
+</div>
+<div class="cinema">
+<img src="ott images/jabar.img" class="cinema" alt="JABARDASTH">
+<h2 class="cin-head">JABARDASTH</h2>
+<a class="watch-now" href="movies.html" role="button">Watch Now</a>
+</div>
+
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+</html>
